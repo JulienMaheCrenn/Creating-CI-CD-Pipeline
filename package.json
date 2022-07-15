@@ -1,0 +1,46 @@
+{
+  "name": "swe-orm-restaurants",
+  "version": "3.0.0",
+  "description": "```json   \"scripts\": {     \"start\": \"node server.js\",     \"dev\": \"NODE_ENV=dev PORT=3000 nodemon server.js\",     \"test\": \"PORT=3001 jest --watchAll\",     \"test:serve\": \"NODE_ENV=test PORT=3001 node server.js\",     \"test:unit\": \"PORT=3001 jest --testPathPattern=/tests/unit\",     \"test:integration_tests\": \"NODE_ENV=test PORT=3001 jest --testPathPattern=/tests/integration\",     \"test:integration\": \"start-server-and-test test:serve http://localhost:3001 test:integration_tests\",     \"test:e2e_tests\": \"cypress run\",     \"test:e2e\": \"start-server-and-test test:serve http://localhost:3001 test:e2e_tests\"   } ```",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "test:unit": "PORT=3001 jest --testPathPattern=/tests/unit",
+    "test:serve": "NODE_ENV=test PORT=3001 node server.js",
+    "test:integration_tests": "NODE_ENV=test PORT=3001 jest --testPathPattern=/tests/integration",
+    "test:integration": "start-server-and-test test:serve http://localhost:3001 test:integration_tests"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "spec"
+    ]
+  },
+  "engines": {
+    "node": "14",
+    "npm": "6"
+  },
+  "author": "bmordan",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.5",
+    "handlebars": "^4.7.7",
+    "pg": "^8.4.1",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cypress": "^5.4.0",
+    "jest": "^26.4.2",
+    "mocha": "^8.2.0",
+    "nodemon": "^2.0.19",
+    "sqlite3": "^5.0.9",
+    "start-server-and-test": "^1.14.0"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
